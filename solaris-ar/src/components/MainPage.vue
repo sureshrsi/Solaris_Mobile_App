@@ -3,7 +3,7 @@
     <ion-toolbar>
       <ion-img
         class="imgsize"
-        src="../../assets/img/SOLARISLogo.png"
+        src="../src/assets/img/SOLARISLogo.png"
         alt="The Wisconsin State Capitol building in Madison, WI at night"
       ></ion-img
     ></ion-toolbar>
@@ -29,7 +29,7 @@
           <div>
             <object
               type="image/svg+xml"
-              data="../../public/assets/img/out3.svg"
+              data="../src/assets/img/out3.svg"
               class="svg-content"
             ></object>
           </div>
@@ -111,7 +111,7 @@ export default {
   object-fit: inherit;
   object-position: inherit;
 }
-object /deep/ path:hover {
+object path:hover {
   fill: red;
 }
 </style>
