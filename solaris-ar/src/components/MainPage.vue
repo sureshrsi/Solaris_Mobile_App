@@ -76,173 +76,85 @@
         </ion-row>
       </ion-card>
       <ion-card>
-          <ion-row>
-            <ion-col>
-                <div class="image-container">
-                  <ion-img src="../src/assets/img/NSGRAD.jpg" />
-                  <div class="overlay-text">Namsai</div>
-                </div>
-            </ion-col>
-            <ion-col>
-                <div class="image-container">
-                  <ion-img src="../src/assets/img/LSGRAD.jpg" />
-                  <div class="overlay-text">Lower Subansari</div>
-                </div>
-            </ion-col>
-            <ion-col>
-                <div class="image-container">
-                  <ion-img src="../src/assets/img/TWGRAD.jpg" />
-                  <div class="overlay-text">Tawang</div>
-                </div>
-            </ion-col>
-          </ion-row>
+        <ion-row>
+          <ion-col>
+            <div class="image-container">
+              <ion-img src="../src/assets/img/NSGRAD.jpg" />
+              <div class="overlay-text">Namsai</div>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="image-container">
+              <ion-img src="../src/assets/img/LSGRAD.jpg" />
+              <div class="overlay-text">Lower Subansari</div>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="image-container">
+              <ion-img src="../src/assets/img/TWGRAD.jpg" />
+              <div class="overlay-text">Tawang</div>
+            </div>
+          </ion-col>
+        </ion-row>
       </ion-card>
       <ion-grid>
-      <ion-row>
-        <ion-col size="3">
-      <ion-card class="smallCardSize">
-        <div class="ion-text-center">
-        <ion-img src="../src/assets/img/Map_Console_Logo.png"></ion-img>
-        <ion-text>Namsai</ion-text>
-      </div>
-      </ion-card>
-    </ion-col>
-    <ion-col size="9">
-      <ion-card class="dataCardSize">
         <ion-row>
-          <ion-col>
-            <ion-text>Tawang</ion-text>
+          <ion-col size="3" class="ion-no-padding ion-no-margin">
+            <ion-card>
+              <ion-img
+                class="console-image"
+                src="../src/assets/img/Map_Console_Logo.png"
+              ></ion-img>
+              <hr />
+              <div class="ion-text-center">
+                <ion-text>Namsai</ion-text>
+              </div>
+            </ion-card>
           </ion-col>
-          <ion-col class="ion-text-end">
-            <ion-text>Head Quarters</ion-text>
+          <ion-col size="9" class="ion-no-padding ion-no-margin">
+            <ion-card>
+              <ion-row>
+                <ion-col>
+                  <ion-text>Tawang</ion-text>
+                </ion-col>
+                <ion-col class="ion-text-end">
+                  <ion-text>Head Quarters</ion-text>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-text>District</ion-text>
+                </ion-col>
+                <ion-col class="ion-text-end">
+                  <ion-text>Tawang</ion-text>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-text>Population : 49977</ion-text>
+                </ion-col>
+              </ion-row>
+              <hr />
+              <ion-row>
+                <ion-col>
+                  <ion-text>Area : 2571.89 Sq Km</ion-text>
+                </ion-col>
+                <ion-col class="ion-text-end">
+                  <ion-text>Circle 11</ion-text>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-text> Revenue Villages : 218 </ion-text>
+                </ion-col>
+                <ion-col class="ion-text-end">
+                  <ion-text>Block 6</ion-text>
+                </ion-col>
+              </ion-row>
+            </ion-card>
           </ion-col>
         </ion-row>
-        <ion-row>
-          <ion-col>
-            <ion-text>District</ion-text>
-          </ion-col>
-          <ion-col class="ion-text-end">
-            <ion-text>Tawang</ion-text>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <ion-text>Population : 49977</ion-text>
-          </ion-col>
-        </ion-row>
-        <ion-row class="custom-line"></ion-row>
-        <ion-row>
-          <ion-col>
-          <ion-text>Area : 2571.89 Sq Km</ion-text>
-        </ion-col>
-        <ion-col class="ion-text-end">
-          <ion-text>Circle 11</ion-text>
-        </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <ion-text>
-              Revenue Villages : 218
-            </ion-text>
-          </ion-col>
-          <ion-col class="ion-text-end">
-            <ion-text>Block 6</ion-text>
-          </ion-col>
-        </ion-row>
-      </ion-card> 
-    </ion-col>
-    </ion-row>
-  </ion-grid>
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <ion-card class="cardSize">
-          <ion-img class="imgSize" src="../src/assets/img/BaseMap.png"></ion-img>
-          <ion-row class="custom-line"></ion-row>
-         <ion-card-subtitle class="ion-text-center ion-padding">Base Map</ion-card-subtitle>
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card class="cardSize">
-          <ion-img class="imgSize" src="../src/assets/img/LULC.png"></ion-img>
-          <ion-row class="custom-line"></ion-row>
-          <ion-card-subtitle class="ion-text-center ion-padding">Land Use Land Cover</ion-card-subtitle>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <ion-card class="cardSize">
-        <ion-img class="imgSize" src="../src/assets/img/SlopeInformation.png"></ion-img>
-        <ion-row class="custom-line"></ion-row>
-        <ion-card-subtitle class="ion-text-center ion-padding">Slope Information</ion-card-subtitle>
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card class="cardSize">
-          <ion-img class="imgSize" src="../src/assets/img/Hydrogeomorphology.png"></ion-img>
-          <ion-row class="custom-line"></ion-row>
-          <ion-card-subtitle class="ion-text-center ion-padding">Hydrogeo Morphology</ion-card-subtitle>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <ion-card class="cardSize">
-        <ion-img class="imgSize" src="../src/assets/img/Soil.png"></ion-img>
-        <ion-row class="custom-line"></ion-row>
-        <ion-card-subtitle class="ion-text-center ion-padding">Soil Information</ion-card-subtitle>
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card class="cardSize">
-        <ion-img class="imgSize" src="../src/assets/img/LandDegredation.png"></ion-img>
-        <ion-row class="custom-line"></ion-row>
-        <ion-card-subtitle class="ion-text-center ion-padding">Land Degradation</ion-card-subtitle>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <ion-card class="cardSize">
-         <ion-img class="imgSize" src="../src/assets/img/LandCapability.png"></ion-img>
-         <ion-row class="custom-line"></ion-row>
-         <ion-card-subtitle class="ion-text-center ion-padding">Land Capability</ion-card-subtitle>
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card class="cardSize">
-         <ion-img class="imgSize" src="../src/assets/img/LandIrrigability.png"></ion-img>
-         <ion-row class="custom-line"></ion-row>
-         <ion-card-subtitle class="ion-text-center ion-padding">Land Irrigability</ion-card-subtitle>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <ion-card class="cardSize">
-       <ion-img class="imgSize" src="../src/assets/img/ActionPlan.png"></ion-img>
-       <ion-row class="custom-line"></ion-row>
-       <ion-card-subtitle class="ion-text-center ion-padding">Action Plan</ion-card-subtitle>
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card class="cardSize">
-          <ion-img class="imgSize" src="../src/assets/img/CropSuitability.png"></ion-img>
-          <ion-row class="custom-line"></ion-row>
-          <ion-card-subtitle class="ion-text-center ion-padding">Crop Suitability</ion-card-subtitle>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+      </ion-grid>
     </ion-content>
   </ion-page>
 </template>
@@ -287,14 +199,7 @@ export default {
 object path:hover {
   fill: red;
 }
-.cardLength{
-  width: 26vh;
-  height:13vh
-}
-.smallCardLength{
-  width: 10vh;
-  height:6vh
-}
+
 .image-container {
   position: relative;
   display: inline-block;
@@ -327,21 +232,16 @@ object path:hover {
   border-width: thin;
   border: inset;
 }
-
-.cardSize{
-  height: 19vh;
-  width:17vh
+hr {
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
-.imgSize{
-  height: 13vh;
-  width:17vh
-}
-.dataCardSize{
-  height: 13vh;
-  width:30vh
-}
-.smallCardSize{
-  height: 13vh;
-  width:10vh
+.console-image {
+  position: relative;
+  height: 10vh;
+  min-height: 5vh;
+  min-width: 5vw;
 }
 </style>
