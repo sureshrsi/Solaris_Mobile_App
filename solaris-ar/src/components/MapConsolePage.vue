@@ -14,7 +14,10 @@
           <ion-buttons slot="start">
             <ion-menu-button></ion-menu-button>
           </ion-buttons>
-          <ion-title>Map Console</ion-title>
+          <ion-title
+            >SOIL AND LAND RESOURCES INFORMATION SYSTEM ARUNACHAL
+            PRADESH</ion-title
+          >
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
