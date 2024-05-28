@@ -1,13 +1,6 @@
 <template>
   <div>
-    <ion-menu content-id="main-content">
-      <ion-header>
-        <ion-toolbar>
-          <ion-title>Menu Content</ion-title>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content class="ion-padding">This is the menu content.</ion-content>
-    </ion-menu>
+    <SideMenuContent />
     <ion-page id="main-content">
       <ion-header>
         <ion-toolbar>
@@ -46,7 +39,7 @@ import XYZ from "ol/source/XYZ";
 import LayerGroup from "ol/layer/Group";
 import LayerSwitcher from "ol-layerswitcher";
 import "ol-layerswitcher/dist/ol-layerswitcher.css";
-
+import SideMenuContent from "./SideMenuContent.vue";
 export default {
   data() {
     return {};
@@ -60,6 +53,7 @@ export default {
     IonPage,
     IonTitle,
     IonToolbar,
+    SideMenuContent,
   },
   mounted() {
     this.initializeMap();
