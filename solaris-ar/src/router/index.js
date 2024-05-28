@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import HomePage from '../views/HomePage.vue'
 import MainView from '../views/MainView.vue'
+import MapConsoleView from '../views/MapConsoleView.vue'
 
 const routes = [
   {
@@ -16,6 +17,11 @@ const routes = [
     path: '/main',
     name: 'Main',
     component: MainView
+  },
+  {
+    path: '/mapconsole',
+    name: 'MapConsole',
+    component: MapConsoleView
   }
 ]
 
