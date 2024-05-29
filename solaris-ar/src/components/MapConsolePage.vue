@@ -30,12 +30,17 @@
       </ion-header>
       <ion-content class="ion-padding">
         <div id="map" class="map"></div>
-        <div v-if="featureInfo" class="feature-info">
-          <h3>Feature Info</h3>
+        <FeatureInfo
+          :featureInfo="featureInfo"
+          :isOpen="isFeatureInfoOpen"
+          @update:isOpen="isFeatureInfoOpen = $event"
+        />
+        <!-- <div v-if="featureInfo" class="feature-info">
+          <h3>Feature adfssdfsdaf Info</h3>
           <p v-for="(value, key) in featureInfo" :key="key">
             <strong>{{ key }}:</strong> {{ value }}
           </p>
-        </div>
+        </div> -->
         <!-- <div v-if="featureInfo" class="feature-info">
           <h3>Feature Info</h3>
           <ion-pre>
@@ -70,6 +75,7 @@ import "ol-layerswitcher/dist/ol-layerswitcher.css";
 // import CustomLayerSwitcherControl from "./CustomLayerSwitcherControl";
 import CustomLayerSwitcher from "./CustomLayerSwitcher.vue";
 import SideMenuContent from "./SideMenuContent.vue";
+import FeatureInfo from "./FeatureInfo.vue";
 export default {
   data() {
     return {
@@ -90,6 +96,8 @@ export default {
     IonToolbar,
     CustomLayerSwitcher,
     SideMenuContent,
+    FeatureInfo,
+    isFeatureInfoOpen: false, // To control the modal visibility
   },
   mounted() {
     this.initializeMap();
@@ -469,6 +477,7 @@ export default {
                 if (data.features && data.features.length > 0) {
                   const feature = data.features[0];
                   this.featureInfo = feature.properties;
+                  this.isFeatureInfoOpen = true;
                 } else {
                   this.featureInfo = null;
                 }
@@ -507,21 +516,4 @@ ion-menu::part(container) {
   height: 100%;
   width: 100%;
 }
-.feature-info {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  background: white;
-  padding: 10px;
-  border: 1px solid black;
-  max-height: 200px;
-  overflow-y: auto;
-}
-/* .layer-switcher-panel {
-  display: none;
-}
-
-.layer-switcher-panel.open {
-  display: block;
-} */
 </style>
