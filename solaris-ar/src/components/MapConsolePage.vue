@@ -1,6 +1,10 @@
 <template>
   <div>
-    <SideMenuContent :layers="layers" />
+    <SideMenuContent
+      :layers="layers"
+      :legendUrl="legendUrl"
+      @layer-toggled="updateLegend"
+    />
     <!-- <ion-menu content-id="main-content">
       <ion-header>
         <ion-toolbar>
@@ -49,7 +53,6 @@ import {
   IonButtons,
   IonContent,
   IonHeader,
-  IonMenu,
   IonMenuButton,
   IonPage,
   IonTitle,
@@ -60,7 +63,6 @@ import { Map, View } from "ol";
 import TileLayer from "ol/layer/Tile";
 import TileWMS from "ol/source/TileWMS";
 import OSM from "ol/source/OSM";
-import XYZ from "ol/source/XYZ";
 import LayerGroup from "ol/layer/Group";
 // import LayerSwitcher from "ol-layerswitcher";
 import { transform } from "ol/proj";
@@ -70,13 +72,18 @@ import CustomLayerSwitcher from "./CustomLayerSwitcher.vue";
 import SideMenuContent from "./SideMenuContent.vue";
 export default {
   data() {
-    return { layers: [], map: null, overlay: null, featureInfo: null };
+    return {
+      layers: [],
+      map: null,
+      overlay: null,
+      featureInfo: null,
+      legendUrl: null,
+    };
   },
   components: {
     IonButtons,
     IonContent,
     IonHeader,
-    IonMenu,
     IonMenuButton,
     IonPage,
     IonTitle,
@@ -377,6 +384,7 @@ export default {
 
       // Add click event listener to the map
       this.map.on("singleclick", this.getTopMostMapClick);
+      this.updateLegend();
       // const layerSwitcher = new LayerSwitcher({
       //   activationMode: "click",
       //   startActive: false,
@@ -424,6 +432,17 @@ export default {
           });
       }
     },
+    updateLegend() {
+      // Iterate through flattened layers from top to bottom to find the topmost visible layer
+      for (let i = this.layers.length - 1; i >= 0; i--) {
+        const layer = this.layers[i];
+        if (layer.getVisible() && layer.getSource().getLegendUrl) {
+          const legendUrl = layer.getSource().getLegendUrl();
+          this.legendUrl = legendUrl;
+          break; // Stop after the first visible layer with a legend
+        }
+      }
+    },
     getTopMostMapClick(event) {
       const view = this.map.getView();
       const viewResolution = view.getResolution();
@@ -462,6 +481,13 @@ export default {
           }
         }
       }
+    },
+  },
+  watch: {
+    // Watch for changes in layer visibility to update the legend
+    layers: {
+      handler: "updateLegend",
+      deep: true,
     },
   },
 };

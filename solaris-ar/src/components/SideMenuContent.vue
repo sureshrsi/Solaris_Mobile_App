@@ -86,9 +86,10 @@
               </ion-card>
               <ion-card class="cardSize">
                 <ion-text><h4>Legend</h4></ion-text>
-                <ion-card-contents
-                  >Click on Map to View Legend</ion-card-contents
-                >
+                <ion-card-contents>
+                  <div v-if="legendUrl" class="legend">
+                    <img :src="legendUrl" alt="Legend Image" /></div
+                ></ion-card-contents>
               </ion-card>
             </ion-col>
           </ion-row>
@@ -115,6 +116,7 @@ import {
 export default {
   props: {
     layers: Array,
+    legendUrl: String,
   },
   components: {
     IonToolbar,
