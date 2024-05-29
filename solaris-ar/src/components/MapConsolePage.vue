@@ -1,7 +1,7 @@
 <template>
   <div>
-    <!-- <SideMenuContent /> -->
-    <ion-menu content-id="main-content">
+    <SideMenuContent :layers="layers" />
+    <!-- <ion-menu content-id="main-content">
       <ion-header>
         <ion-toolbar>
           <ion-title>Menu Content</ion-title>
@@ -10,11 +10,8 @@
       <ion-content class="ion-padding">
         <CustomLayerSwitcher :layers="layers" />
       </ion-content>
-      <!-- <div id="layer-switcher-panel" class="layer-switcher-panel">
-          <h2>Layers</h2>
-          <div id="layer-switcher"></div>
-        </div> -->
-    </ion-menu>
+     
+    </ion-menu> -->
 
     <ion-page id="main-content">
       <ion-header>
@@ -23,9 +20,8 @@
             <ion-menu-button></ion-menu-button>
           </ion-buttons>
           <ion-title>
-            <ion-img src="../src/assets/img/SOLARISLogo.png">
-            </ion-img>
-            </ion-title>
+            <ion-img src="../src/assets/img/SOLARISLogo.png"> </ion-img>
+          </ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
@@ -71,7 +67,7 @@ import { transform } from "ol/proj";
 import "ol-layerswitcher/dist/ol-layerswitcher.css";
 // import CustomLayerSwitcherControl from "./CustomLayerSwitcherControl";
 import CustomLayerSwitcher from "./CustomLayerSwitcher.vue";
-// import SideMenuContent from "./SideMenuContent.vue";
+import SideMenuContent from "./SideMenuContent.vue";
 export default {
   data() {
     return { layers: [], map: null, overlay: null, featureInfo: null };
@@ -86,7 +82,7 @@ export default {
     IonTitle,
     IonToolbar,
     CustomLayerSwitcher,
-    // SideMenuContent,
+    SideMenuContent,
   },
   mounted() {
     this.initializeMap();
