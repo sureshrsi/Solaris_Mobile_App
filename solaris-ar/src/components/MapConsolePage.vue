@@ -22,10 +22,10 @@
           <ion-buttons slot="start">
             <ion-menu-button></ion-menu-button>
           </ion-buttons>
-          <ion-title
-            >SOIL AND LAND RESOURCES INFORMATION SYSTEM ARUNACHAL
-            PRADESH</ion-title
-          >
+          <ion-title>
+            <ion-img src="../src/assets/img/SOLARISLogo.png">
+            </ion-img>
+            </ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
