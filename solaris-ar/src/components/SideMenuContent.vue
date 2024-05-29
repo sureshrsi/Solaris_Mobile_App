@@ -30,32 +30,74 @@
                     >Circle 2</ion-select-option
                   >
                 </ion-select>
-                <ion-segment value="buttons" color="primary" mode="ios">
-                  <ion-segment-button value="gridno">
+
+                <ion-segment
+                  v-model="selectedSegment"
+                  color="primary"
+                  mode="ios"
+                >
+                  <ion-segment-button value="segment1">
                     <ion-label>Grid No</ion-label>
                   </ion-segment-button>
-                  <ion-segment-button value="village">
+                  <ion-segment-button value="segment2">
                     <ion-label>Village</ion-label>
                   </ion-segment-button>
-                  <ion-segment-button value="watershed">
+                  <ion-segment-button value="segment3">
                     <ion-label>Watershed</ion-label>
                   </ion-segment-button>
                 </ion-segment>
-                <ion-select
-                  class="ion-margin-top"
-                  interface="popover"
-                  label="Select Grid No"
-                  label-placement="floating"
-                  placeholder="Select Grid No"
-                  fill="outline"
-                >
-                  <ion-select-option value="circle1"
-                    >Circle 1</ion-select-option
+
+                <div v-if="selectedSegment === 'segment1'">
+                  <ion-select
+                    class="ion-margin-top"
+                    interface="popover"
+                    label="Select Grid No"
+                    label-placement="floating"
+                    placeholder="Select Grid No"
+                    fill="outline"
                   >
-                  <ion-select-option value="circle2"
-                    >Circle 2</ion-select-option
+                    <ion-select-option value="circle1"
+                      >Circle 1</ion-select-option
+                    >
+                    <ion-select-option value="circle2"
+                      >Circle 2</ion-select-option
+                    >
+                  </ion-select>
+                </div>
+                <div v-if="selectedSegment === 'segment2'">
+                  <ion-select
+                    class="ion-margin-top"
+                    interface="popover"
+                    label="Select Village"
+                    label-placement="floating"
+                    placeholder="Select Village"
+                    fill="outline"
                   >
-                </ion-select>
+                    <ion-select-option value="circle1"
+                      >Circle 1</ion-select-option
+                    >
+                    <ion-select-option value="circle2"
+                      >Circle 2</ion-select-option
+                    >
+                  </ion-select>
+                </div>
+                <div v-if="selectedSegment === 'segment3'">
+                  <ion-select
+                    class="ion-margin-top"
+                    interface="popover"
+                    label="Select Watershed"
+                    label-placement="floating"
+                    placeholder="Select Watershed"
+                    fill="outline"
+                  >
+                    <ion-select-option value="circle1"
+                      >Circle 1</ion-select-option
+                    >
+                    <ion-select-option value="circle2"
+                      >Circle 2</ion-select-option
+                    >
+                  </ion-select>
+                </div>
               </ion-card>
               <ion-card class="cardSize">
                 <ion-text><h4>Layer Control</h4></ion-text>
@@ -100,11 +142,18 @@ import {
   IonCard,
   IonLabel,
   IonToggle,
+  IonSegment,
+  IonSegmentButton,
 } from "@ionic/vue";
 export default {
   props: {
     layers: Array,
     legendUrl: String,
+  },
+  data() {
+    return {
+      selectedSegment: "segment1",
+    };
   },
   components: {
     IonToolbar,
@@ -119,6 +168,8 @@ export default {
     IonCard,
     IonLabel,
     IonToggle,
+    IonSegment,
+    IonSegmentButton,
   },
   methods: {
     toggleLayer(layer) {
