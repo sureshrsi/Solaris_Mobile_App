@@ -32,11 +32,17 @@
         <div id="map" class="map"></div>
         <div v-if="featureInfo" class="feature-info">
           <h3>Feature Info</h3>
+          <p v-for="(value, key) in featureInfo" :key="key">
+            <strong>{{ key }}:</strong> {{ value }}
+          </p>
+        </div>
+        <!-- <div v-if="featureInfo" class="feature-info">
+          <h3>Feature Info</h3>
           <ion-pre>
             <h6>{{ featureInfo.soil_code }}</h6>
             <h6>{{ featureInfo.action_pla }}</h6>
           </ion-pre>
-        </div>
+        </div> -->
       </ion-content>
     </ion-page>
   </div>
@@ -374,7 +380,7 @@ export default {
       ];
 
       // Add click event listener to the map
-      this.map.on("singleclick", this.handleMapClick);
+      this.map.on("singleclick", this.getTopMostMapClick);
       // const layerSwitcher = new LayerSwitcher({
       //   activationMode: "click",
       //   startActive: false,
@@ -420,6 +426,45 @@ export default {
           .catch((error) => {
             console.error("Error fetching feature info:", error);
           });
+      }
+    },
+    getTopMostMapClick(event) {
+      const view = this.map.getView();
+      const viewResolution = view.getResolution();
+      const projection = view.getProjection();
+
+      // Iterate through flattened layers from top to bottom to find the topmost visible layer with getFeatureInfoUrl
+      for (let i = this.layers.length - 1; i >= 0; i--) {
+        const layer = this.layers[i];
+        if (
+          layer.getVisible() &&
+          typeof layer.getSource().getFeatureInfoUrl === "function"
+        ) {
+          const url = layer
+            .getSource()
+            .getFeatureInfoUrl(event.coordinate, viewResolution, projection, {
+              INFO_FORMAT: "application/json",
+            });
+
+          if (url) {
+            console.log("top most url", url);
+            fetch(url)
+              .then((response) => response.json())
+              .then((data) => {
+                if (data.features && data.features.length > 0) {
+                  const feature = data.features[0];
+                  this.featureInfo = feature.properties;
+                } else {
+                  this.featureInfo = null;
+                }
+              })
+              .catch((error) => {
+                console.error("Error fetching feature info:", error);
+                this.featureInfo = null;
+              });
+            break; // Stop after the first visible layer with feature info
+          }
+        }
       }
     },
   },
