@@ -1,7 +1,9 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import HomePage from '../views/HomePage.vue'
 import MainView from '../views/MainView.vue'
-import MapConsoleView from '../views/MapConsoleView.vue'
+import NSMapConsoleView from '../views/NSMapConsoleView.vue'
+import LSMapConsoleView from '../views/LSMapConsoleView.vue'
+import TWMapConsoleView from '../views/TWMapConsoleView.vue'
 
 const routes = [
   {
@@ -19,9 +21,19 @@ const routes = [
     component: MainView
   },
   {
-    path: '/mapconsole',
-    name: 'MapConsole',
-    component: MapConsoleView
+    path: '/namsaimapconsole',
+    name: 'NSMapConsole',
+    component: NSMapConsoleView
+  },
+  {
+    path: '/lsmapconsole',
+    name: 'LSMapConsole',
+    component: LSMapConsoleView
+  },
+  {
+    path: '/twmapconsole',
+    name: 'TWMapConsole',
+    component: TWMapConsoleView
   }
 ]
 

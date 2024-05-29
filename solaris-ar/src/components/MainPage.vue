@@ -79,19 +79,27 @@
         <ion-row>
           <ion-col>
             <div class="image-container">
-              <ion-img src="../src/assets/img/NSGRAD.jpg" />
+              <router-link :to="{ path: '/namsaimapconsole' }"
+                ><button><ion-img src="../src/assets/img/NSGRAD.jpg" /></button
+              ></router-link>
+              <!-- <ion-img src="../src/assets/img/NSGRAD.jpg" /> -->
               <div class="overlay-text">Namsai</div>
             </div>
           </ion-col>
           <ion-col>
             <div class="image-container">
-              <ion-img src="../src/assets/img/LSGRAD.jpg" />
+              <router-link :to="{ path: '/lsmapconsole' }"
+                ><button><ion-img src="../src/assets/img/LSGRAD.jpg" /></button
+              ></router-link>
               <div class="overlay-text">Lower Subansari</div>
             </div>
           </ion-col>
           <ion-col>
             <div class="image-container">
-              <ion-img src="../src/assets/img/TWGRAD.jpg" />
+              <router-link :to="{ path: '/twmapconsole' }"
+                ><button><ion-img src="../src/assets/img/TWGRAD.jpg" /></button
+              ></router-link>
+
               <div class="overlay-text">Tawang</div>
             </div>
           </ion-col>
