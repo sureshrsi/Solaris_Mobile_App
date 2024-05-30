@@ -1,9 +1,21 @@
 <template>
   <ion-app>
-    <ion-router-outlet swipeGesture="enabled" />
+    <router-view></router-view>
   </ion-app>
 </template>
 
-<script setup>
-import { IonApp, IonRouterOutlet } from "@ionic/vue";
+<script>
+import { defineComponent } from "vue";
+import { IonApp } from "@ionic/vue";
+
+export default defineComponent({
+  name: "App",
+  components: {
+    IonApp,
+  },
+});
 </script>
+
+<style>
+/* Add any global styles here */
+</style>

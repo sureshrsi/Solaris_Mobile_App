@@ -79,27 +79,35 @@
         <ion-row>
           <ion-col>
             <div class="image-container">
-              <router-link :to="{ path: '/namsaimapconsole' }"
+              <!-- <router-link :to="{ path: '/namsaimapconsole' }"
                 ><button><ion-img src="../src/assets/img/NSGRAD.jpg" /></button
-              ></router-link>
+              ></router-link> -->
               <!-- <ion-img src="../src/assets/img/NSGRAD.jpg" /> -->
+              <button @click="$router.push('/namsaimapconsole')">
+                <ion-img src="../src/assets/img/NSGRAD.jpg" />
+              </button>
               <div class="overlay-text">Namsai</div>
             </div>
           </ion-col>
           <ion-col>
             <div class="image-container">
-              <router-link :to="{ path: '/lsmapconsole' }"
+              <!-- <router-link :to="{ path: '/lsmapconsole' }"
                 ><button><ion-img src="../src/assets/img/LSGRAD.jpg" /></button
-              ></router-link>
+              ></router-link> -->
+              <button @click="$router.push('/lsmapconsole')">
+                <ion-img src="../src/assets/img/LSGRAD.jpg" />
+              </button>
               <div class="overlay-text">Lower Subansari</div>
             </div>
           </ion-col>
           <ion-col>
             <div class="image-container">
-              <router-link :to="{ path: '/twmapconsole' }"
+              <!-- <router-link :to="{ path: '/twmapconsole' }"
                 ><button><ion-img src="../src/assets/img/TWGRAD.jpg" /></button
-              ></router-link>
-
+              ></router-link> -->
+              <button @click="$router.push('/twmapconsole')">
+                <ion-img src="../src/assets/img/TWGRAD.jpg" />
+              </button>
               <div class="overlay-text">Tawang</div>
             </div>
           </ion-col>
