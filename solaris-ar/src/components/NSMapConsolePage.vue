@@ -26,6 +26,9 @@
           <ion-title>
             <ion-img src="../src/assets/img/SOLARISLogo.png"> </ion-img>
           </ion-title>
+          <ion-buttons slot="start">
+            <ion-back-button default-href="/main" />
+          </ion-buttons>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
@@ -62,6 +65,7 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
+  IonBackButton,
 } from "@ionic/vue";
 import "ol/ol.css";
 import { Map, View } from "ol";
@@ -94,6 +98,7 @@ export default {
     IonPage,
     IonTitle,
     IonToolbar,
+    IonBackButton,
     CustomLayerSwitcher,
     SideMenuContent,
     FeatureInfo,
