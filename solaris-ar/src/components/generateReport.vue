@@ -1,17 +1,20 @@
 <template>
-    <ion-container>
-<ion-row class="ion-text-center">
-<ion-toolbar>
-<ion-text class="ion-padding"><strong>Natural Resources Inventory for Micro Level Agricultural Planning</strong></ion-text>
+    <ion-content>
+<ion-row>
+<ion-toolbar class="ion-text-center">
+<ion-text><strong>Natural Resources Inventory for Micro Level Agricultural Planning</strong></ion-text>
 </ion-toolbar>
 </ion-row>
 <ion-row class="ion-text-center ion-padding">
-<ion-text class="ion-padding"><strong>Arunachal Pradesh Space Application Centre</strong></ion-text>
+<ion-text color="primary"><strong>Arunachal Pradesh Space Application Centre</strong></ion-text>
 </ion-row>
-<ion-row class="ion-text-center ion-padding">
-<ion-text class="ion-margin-left"><strong>Government of Arunachal Pradesh</strong></ion-text>
+<ion-row>
+    <ion-col class="ion-text-center">
+<ion-text color="primary"><strong>Government of Arunachal Pradesh</strong></ion-text>
+</ion-col>
 </ion-row>
-<table>
+<div class="ion-padding">
+<table> 
         <!-- Header -->
         <ion-grid>
           <ion-row>
@@ -40,9 +43,12 @@
           </ion-row>
         </ion-tbody>
       </table>
+    </div>
 
-
-      <!-- <ion-text class="ion-padding"><strong>Soil Information</strong></ion-text> -->
+      <ion-row class="ion-padding-start">
+      <ion-text><strong>Soil Information</strong></ion-text>
+    </ion-row>
+    <div class="ion-padding">
       <table>
 <thead>
 <tr>
@@ -133,8 +139,13 @@
 </tr>
                 </tbody>
             </table>
+        </div>
+        <div class="ion-padding-start">
+            <ion-row>
             <ion-text><strong>Crop Suitability</strong></ion-text>
-
+        </ion-row>
+    </div>
+        <div class="ion-padding">
 <table>
     <thead>
 <tr>
@@ -155,7 +166,11 @@
 </tr>
     </thead>
 </table>
+</div>
+<ion-row class="ion-padding-start">
 <ion-text><strong>Action Plan</strong></ion-text>
+</ion-row>
+<div class="ion-padding">
 <table>
     <thead>
 <tr>
@@ -164,24 +179,29 @@
 </tr>
     </thead>
 </table>
+</div>
+<div>
 <ion-row>
-    <ion-text class="ion-text-center">Powered By</ion-text>
+    <ion-col class="ion-text-center">
+    <ion-text><strong>Powered By</strong></ion-text>
+</ion-col>
 </ion-row>
+</div>  
 <ion-row>
     <ion-text class="ion-text-center"><strong>Arunachal Pradesh Space Application Centre & Remote Sensing Instruments LLP</strong></ion-text>
 </ion-row>
 <ion-row>
-    <ion-col>
+    <ion-col class="ion-padding-down">
         <ion-button expand="block" color="primary">Print</ion-button>
     </ion-col>
     <ion-col>
         <ion-button expand="block" color="primary">Back</ion-button>
     </ion-col>
 </ion-row>
-</ion-container>
+</ion-content>
 </template>
 <script>
-import {IonRow, IonCol ,IonContainer} from "@ionic/vue";
+import {IonRow, IonCol , IonContent} from "@ionic/vue";
 export default{
     data() {
     return {
@@ -193,7 +213,7 @@ export default{
   components:{
     IonRow,
     IonCol,
-    IonContainer,
+    IonContent
   }
 }
 </script>
@@ -206,14 +226,14 @@ export default{
     }
     table tbody tr td {
         border: solid 1px #000000;
+        text-align: center;
     }
     table thead tr th{
         border: solid 1px #000000;
+        text-align: center;
     }
     table tbody tr th {
         border: solid 1px #000000;
-    }
-    ion-container{
-        overflow-y: scroll;
+        text-align: center;
     }
 </style>
