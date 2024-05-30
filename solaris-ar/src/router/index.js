@@ -4,6 +4,7 @@ import MainView from '../views/MainView.vue'
 import NSMapConsoleView from '../views/NSMapConsoleView.vue'
 import LSMapConsoleView from '../views/LSMapConsoleView.vue'
 import TWMapConsoleView from '../views/TWMapConsoleView.vue'
+import GenerateReport from '../components/generateReport.vue';
 
 const routes = [
   {
@@ -34,7 +35,12 @@ const routes = [
     path: '/twmapconsole',
     name: 'TWMapConsole',
     component: TWMapConsoleView
-  }
+  },
+  {
+  path:'/generatereport',
+  name:'generateReport',
+  component:GenerateReport
+}
 ]
 
 const router = createRouter({
