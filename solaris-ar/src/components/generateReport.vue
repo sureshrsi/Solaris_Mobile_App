@@ -5,14 +5,36 @@
 <ion-text><strong>Natural Resources Inventory for Micro Level Agricultural Planning</strong></ion-text>
 </ion-toolbar>
 </ion-row>
-<ion-row class="ion-text-center ion-padding">
+<!-- <ion-row class="ion-padding">
 <ion-text color="primary"><strong>Arunachal Pradesh Space Application Centre</strong></ion-text>
 </ion-row>
 <ion-row>
     <ion-col class="ion-text-center">
 <ion-text color="primary"><strong>Government of Arunachal Pradesh</strong></ion-text>
 </ion-col>
-</ion-row>
+</ion-row> -->
+<div>
+    <ion-row>
+        <ion-col size="2">
+        <ion-img src="../src/assets/img/Map_Console_Logo.png"></ion-img>
+        </ion-col>
+        <ion-col class="ion-text-center" size="8">
+            <!-- <ion-text class="fontSize">Natural Resources Inventory for Micro Level Agricultural Planning</ion-text> -->
+            <ion-text class="fontSize ion-padding-top">Arunachal Pradesh Space Application Centre</ion-text><br>
+            <ion-text class="fontSizeTwo">Government of Arunachal Pradesh</ion-text>
+        </ion-col>
+        <ion-col size="2">
+        <ion-img src="../src/assets/img/arplogo.jpg"></ion-img>
+        </ion-col>
+    </ion-row>
+</div>
+<div>
+    <ion-card>
+        <ion-card-content>
+            <ion-img src="../src/assets/img/temp.png"></ion-img>
+        </ion-card-content>
+    </ion-card>
+</div>
 <div class="ion-padding">
 <table> 
         <!-- Header -->
@@ -146,7 +168,7 @@
         </ion-row>
     </div>
         <div class="ion-padding">
-<table>
+<table width="full">
     <thead>
 <tr>
 <th scope="row">Highly Suitable Crops (S1)</th>
@@ -182,7 +204,7 @@
 </div>
 <div>
 <ion-row>
-    <ion-col class="ion-text-center">
+    <ion-col class="ion-text-center fontSizeTwo">
     <ion-text><strong>Powered By</strong></ion-text>
 </ion-col>
 </ion-row>
@@ -192,10 +214,10 @@
 </ion-row>
 <ion-row>
     <ion-col class="ion-padding-down">
-        <ion-button expand="block" color="primary">Print</ion-button>
+        <ion-button expand="block" size="small" color="primary">Print</ion-button>
     </ion-col>
     <ion-col>
-        <ion-button expand="block" color="primary">Back</ion-button>
+        <ion-button expand="block" size="small" color="primary">Back</ion-button>
     </ion-col>
 </ion-row>
 </ion-content>
@@ -223,6 +245,7 @@ export default{
         text-align: center;
         padding: 1vh;
         overflow-y: scroll;
+        width: 100%;
     }
     table tbody tr td {
         border: solid 1px #000000;
@@ -236,4 +259,10 @@ export default{
         border: solid 1px #000000;
         text-align: center;
     }
+    .fontSize {
+            font-size:1rem
+        }
+        .fontSizeTwo {
+            font-size:0.800rem
+        }
 </style>
