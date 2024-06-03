@@ -120,12 +120,12 @@ export default {
 
       const CropSuitabilityLayer = new TileLayer({
         title: "Crop Suitability",
-        name: "namsai_crop_suitability",
+        name: "tawang_crop_suitability_01022024",
         visible: false,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:namsai_crop_suitability",
+            LAYERS: "APWS:tawang_crop_suitability_01022024",
             TILED: true,
           },
           serverType: "geoserver",
@@ -135,12 +135,12 @@ export default {
 
       const ActionPlaneLayer = new TileLayer({
         title: "Action Plan",
-        name: "namsai_land_and_water_action_plan",
+        name: "tawang_lulc_01022024",
         visible: false,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:namsai_land_and_water_action_plan",
+            LAYERS: "APWS:tawang_lulc_01022024",
             TILED: true,
           },
           serverType: "geoserver",
@@ -150,12 +150,26 @@ export default {
 
       const gridLayer = new TileLayer({
         title: "Grid",
-        name: "namsai_grid_10k",
+        name: "tawang_10k_01022024",
         visible: false,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:namsai_grid_10k",
+            LAYERS: "APWS:tawang_10k_01022024",
+            TILED: true,
+          },
+          serverType: "geoserver",
+          transition: 0,
+        }),
+      });
+      const CountourLayer = new TileLayer({
+        title: "Countour",
+        name: "tawang_contour_updated",
+        visible: false,
+        source: new TileWMS({
+          url: base_url + "/wms", // Replace with your GeoServer WMS URL
+          params: {
+            LAYERS: "APWS:tawang_contour_updated",
             TILED: true,
           },
           serverType: "geoserver",
@@ -165,12 +179,12 @@ export default {
 
       const LandCapLayer = new TileLayer({
         title: "Land Capability",
-        name: "namsai_land_capability",
+        name: "tawang_capability_01022024",
         visible: false,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:namsai_land_capability",
+            LAYERS: "APWS:tawang_capability_01022024",
             TILED: true,
           },
           serverType: "geoserver",
@@ -179,12 +193,12 @@ export default {
       });
       const LandDegradationLayer = new TileLayer({
         title: "Land Degradation",
-        name: "namsai_land_degradation",
+        name: "tawang_land_degradation_01022024",
         visible: false,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:namsai_land_degradation",
+            LAYERS: "APWS:tawang_land_degradation_01022024",
             TILED: true,
           },
           serverType: "geoserver",
@@ -193,12 +207,12 @@ export default {
       });
       const SoilInfoLayer = new TileLayer({
         title: "Soil Information",
-        name: "soil_1_new",
+        name: "tawang_soil_01022024",
         visible: false,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:soil_1_new",
+            LAYERS: "APWS:tawang_soil_01022024",
             TILED: true,
           },
           serverType: "geoserver",
@@ -208,12 +222,12 @@ export default {
 
       const HgeomLayer = new TileLayer({
         title: "Hydrogeomorphology",
-        name: "namsai_hgeom",
+        name: "tawang_hgeom_updated",
         visible: false,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:namsai_hgeom",
+            LAYERS: "APWS:tawang_hgeom_updated",
             TILED: true,
           },
           serverType: "geoserver",
@@ -223,12 +237,12 @@ export default {
 
       const LineamentLayer = new TileLayer({
         title: "Lineament",
-        name: "namsai_lineament",
+        name: "tawang_lineament",
         visible: false,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:namsai_lineament",
+            LAYERS: "APWS:tawang_lineament",
             TILED: true,
           },
           serverType: "geoserver",
@@ -238,12 +252,12 @@ export default {
 
       const SlopeLayer = new TileLayer({
         title: "Slope Information",
-        name: "namsai_slope_new",
+        name: "tawang_slope",
         visible: false,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:namsai_slope_new",
+            LAYERS: "APWS:tawang_slope",
             TILED: true,
           },
           serverType: "geoserver",
@@ -253,12 +267,12 @@ export default {
 
       const LulcLayer = new TileLayer({
         title: "Land Use Land Cover",
-        name: "namsai_lulc_1_new",
+        name: "tawang_lulc_01022024",
         visible: false,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:namsai_lulc_1_new",
+            LAYERS: "APWS:tawang_lulc_01022024",
             TILED: true,
           },
           serverType: "geoserver",
@@ -267,12 +281,12 @@ export default {
       });
       const WatershedLayer = new TileLayer({
         title: "Watershed",
-        name: "namsai_watershed_union",
+        name: "tawang_watershed",
         visible: false,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:namsai_watershed_union",
+            LAYERS: "APWS:tawang_watershed",
             TILED: true,
           },
           serverType: "geoserver",
@@ -281,13 +295,13 @@ export default {
       });
 
       const DrainPLayer = new TileLayer({
-        title: "DrainP",
-        name: "namsai_drainp",
+        title: "Drainage Poly",
+        name: "tawang_drainp",
         visible: false,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:namsai_drainp",
+            LAYERS: "APWS:tawang_drainp",
             TILED: true,
           },
           serverType: "geoserver",
@@ -296,13 +310,13 @@ export default {
       });
 
       const DrainLLayer = new TileLayer({
-        title: "DrainL",
-        name: "namsai_drainl_new",
+        title: "Drainage Line",
+        name: "tawang_drainl",
         visible: false,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:namsai_drainl_new",
+            LAYERS: "APWS:tawang_drainl",
             TILED: true,
           },
           serverType: "geoserver",
@@ -312,12 +326,12 @@ export default {
 
       const BasemapLayer = new TileLayer({
         title: "Base Map",
-        name: "BaseLayer",
+        name: "Tawang_BaseLayer",
         visible: true,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:BaseLayer",
+            LAYERS: "APWS:Tawang_BaseLayer",
             TILED: true,
           },
           serverType: "geoserver",
@@ -327,12 +341,12 @@ export default {
 
       const CircleLayer = new TileLayer({
         title: "Circle",
-        name: "circle_boundary",
+        name: "tawang_circle_boundary",
         visible: false,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:circle_boundary",
+            LAYERS: "APWS:tawang_circle_boundary",
             TILED: true,
           },
           serverType: "geoserver",
@@ -359,11 +373,12 @@ export default {
           DrainLLayer,
           BasemapLayer,
           CircleLayer,
+          CountourLayer,
         ],
       });
 
       const view = new View({
-        center: transform([95.97135, 27.66894], "EPSG:4326", "EPSG:3857"),
+        center: transform([91.94, 27.65], "EPSG:4326", "EPSG:3857"),
         zoom: 9.5,
         // minZoom: 10.5,
         maxZoom: 18,
@@ -393,6 +408,7 @@ export default {
         DrainLLayer,
         BasemapLayer,
         CircleLayer,
+        CountourLayer,
       ];
 
       // Add click event listener to the map

@@ -13,7 +13,9 @@
           <ion-row>
             <ion-col class="ion-text-center">
               <ion-card>
-                <ion-text><h4>Tawang District</h4></ion-text>
+                <ion-text
+                  ><h4>{{ pageTitle }}</h4></ion-text
+                >
                 <hr />
                 <ion-select
                   class="ion-margin-top"
@@ -145,6 +147,7 @@ import {
   IonSegment,
   IonSegmentButton,
 } from "@ionic/vue";
+import { useRoute } from "vue-router";
 export default {
   props: {
     layers: Array,
@@ -171,9 +174,31 @@ export default {
     IonSegment,
     IonSegmentButton,
   },
+  computed: {
+    pageTitle() {
+      return this.getPageTitle();
+    },
+  },
   methods: {
     toggleLayer(layer) {
       layer.setVisible(!layer.getVisible());
+    },
+    getPageTitle() {
+      const route = useRoute();
+
+      switch (route.path) {
+        case "/":
+          return "Home";
+        case "/namsaimapconsole":
+          return "Namsai";
+        case "/lsmapconsole":
+          return "Lower Subansari";
+        case "/twmapconsole":
+          return "Tawang";
+        // Add more cases for other routes
+        default:
+          return "Default Title";
+      }
     },
   },
 };
