@@ -1,11 +1,11 @@
 <template>
-  <NSMapConsolePage />
+  <TWMapConsolePage />
 </template>
 <script>
-import NSMapConsolePage from "../components/NSMapConsolePage.vue";
+import TWMapConsolePage from "../components/TWMapConsolePage.vue";
 export default {
   components: {
-    NSMapConsolePage,
+    TWMapConsolePage,
   },
 };
 </script>

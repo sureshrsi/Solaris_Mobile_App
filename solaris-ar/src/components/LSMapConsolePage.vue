@@ -118,14 +118,29 @@ export default {
         source: new OSM(),
       });
 
-      const CropSuitabilityLayer = new TileLayer({
-        title: "Crop Suitability",
-        name: "namsai_crop_suitability",
+      const arunachalPradeshLayer = new TileLayer({
+        title: "Arunachal Pradesh",
+        name: "arunachal_pradesh",
         visible: false,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:namsai_crop_suitability",
+            LAYERS: "APWS:APWS:dist",
+            TILED: true,
+          },
+          serverType: "geoserver",
+          transition: 0,
+        }),
+      });
+
+      const CropSuitabilityLayer = new TileLayer({
+        title: "Crop Suitability",
+        name: "lower_subansiri_crop_suitability_updated_01022024",
+        visible: false,
+        source: new TileWMS({
+          url: base_url + "/wms", // Replace with your GeoServer WMS URL
+          params: {
+            LAYERS: "APWS:lower_subansiri_crop_suitability_updated_01022024",
             TILED: true,
           },
           serverType: "geoserver",
@@ -135,12 +150,12 @@ export default {
 
       const ActionPlaneLayer = new TileLayer({
         title: "Action Plan",
-        name: "namsai_land_and_water_action_plan",
+        name: "lower_subansiri_action_plan_test_14022024",
         visible: false,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:namsai_land_and_water_action_plan",
+            LAYERS: "APWS:lower_subansiri_action_plan_test_14022024",
             TILED: true,
           },
           serverType: "geoserver",
@@ -150,12 +165,12 @@ export default {
 
       const gridLayer = new TileLayer({
         title: "Grid",
-        name: "namsai_grid_10k",
+        name: "lower_subansiri_grid_10k",
         visible: false,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:namsai_grid_10k",
+            LAYERS: "APWS:lower_subansiri_grid_10k",
             TILED: true,
           },
           serverType: "geoserver",
@@ -165,12 +180,12 @@ export default {
 
       const LandCapLayer = new TileLayer({
         title: "Land Capability",
-        name: "namsai_land_capability",
+        name: "lower_subansiri_land_capability_01022024",
         visible: false,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:namsai_land_capability",
+            LAYERS: "APWS:lower_subansiri_land_capability_01022024",
             TILED: true,
           },
           serverType: "geoserver",
@@ -179,12 +194,12 @@ export default {
       });
       const LandDegradationLayer = new TileLayer({
         title: "Land Degradation",
-        name: "namsai_land_degradation",
+        name: "lower_subansiri_land_degradation",
         visible: false,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:namsai_land_degradation",
+            LAYERS: "APWS:lower_subansiri_land_degradation",
             TILED: true,
           },
           serverType: "geoserver",
@@ -193,12 +208,12 @@ export default {
       });
       const SoilInfoLayer = new TileLayer({
         title: "Soil Information",
-        name: "soil_1_new",
+        name: "lower_subansiri_soil",
         visible: false,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:soil_1_new",
+            LAYERS: "APWS:lower_subansiri_soil",
             TILED: true,
           },
           serverType: "geoserver",
@@ -208,12 +223,12 @@ export default {
 
       const HgeomLayer = new TileLayer({
         title: "Hydrogeomorphology",
-        name: "namsai_hgeom",
+        name: "lower_subansiri_hgeom1_01022024",
         visible: false,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:namsai_hgeom",
+            LAYERS: "APWS:lower_subansiri_hgeom1_01022024",
             TILED: true,
           },
           serverType: "geoserver",
@@ -223,12 +238,12 @@ export default {
 
       const LineamentLayer = new TileLayer({
         title: "Lineament",
-        name: "namsai_lineament",
+        name: "lower_subansiri_lineament",
         visible: false,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:namsai_lineament",
+            LAYERS: "APWS:lower_subansiri_lineament",
             TILED: true,
           },
           serverType: "geoserver",
@@ -238,12 +253,12 @@ export default {
 
       const SlopeLayer = new TileLayer({
         title: "Slope Information",
-        name: "namsai_slope_new",
+        name: "lower_subansiri_slope",
         visible: false,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:namsai_slope_new",
+            LAYERS: "APWS:lower_subansiri_slope",
             TILED: true,
           },
           serverType: "geoserver",
@@ -253,12 +268,12 @@ export default {
 
       const LulcLayer = new TileLayer({
         title: "Land Use Land Cover",
-        name: "namsai_lulc_1_new",
+        name: "lower_subansiri_lulc",
         visible: false,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:namsai_lulc_1_new",
+            LAYERS: "APWS:lower_subansiri_lulc",
             TILED: true,
           },
           serverType: "geoserver",
@@ -267,12 +282,12 @@ export default {
       });
       const WatershedLayer = new TileLayer({
         title: "Watershed",
-        name: "namsai_watershed_union",
+        name: "lower_subansiri_watershed",
         visible: false,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:namsai_watershed_union",
+            LAYERS: "APWS:lower_subansiri_watershed",
             TILED: true,
           },
           serverType: "geoserver",
@@ -281,13 +296,13 @@ export default {
       });
 
       const DrainPLayer = new TileLayer({
-        title: "DrainP",
-        name: "namsai_drainp",
+        title: "Drainage Poly",
+        name: "lower_subansiri_drainp",
         visible: false,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:namsai_drainp",
+            LAYERS: "APWS:lower_subansiri_drainp",
             TILED: true,
           },
           serverType: "geoserver",
@@ -296,13 +311,13 @@ export default {
       });
 
       const DrainLLayer = new TileLayer({
-        title: "DrainL",
-        name: "namsai_drainl_new",
+        title: "Drainage Line",
+        name: "lower_subansiri_drainl",
         visible: false,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:namsai_drainl_new",
+            LAYERS: "APWS:lower_subansiri_drainl",
             TILED: true,
           },
           serverType: "geoserver",
@@ -312,12 +327,12 @@ export default {
 
       const BasemapLayer = new TileLayer({
         title: "Base Map",
-        name: "BaseLayer",
+        name: "Lowersubansiri_BaseLayer",
         visible: true,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:BaseLayer",
+            LAYERS: "APWS:Lowersubansiri_BaseLayer",
             TILED: true,
           },
           serverType: "geoserver",
@@ -327,12 +342,12 @@ export default {
 
       const CircleLayer = new TileLayer({
         title: "Circle",
-        name: "circle_boundary",
+        name: "ls_circle_boundary_01022024",
         visible: false,
         source: new TileWMS({
           url: base_url + "/wms", // Replace with your GeoServer WMS URL
           params: {
-            LAYERS: "APWS:circle_boundary",
+            LAYERS: "APWS:ls_circle_boundary_01022024",
             TILED: true,
           },
           serverType: "geoserver",
@@ -359,11 +374,12 @@ export default {
           DrainLLayer,
           BasemapLayer,
           CircleLayer,
+          arunachalPradeshLayer,
         ],
       });
 
       const view = new View({
-        center: transform([95.97135, 27.66894], "EPSG:4326", "EPSG:3857"),
+        center: transform([93.73, 27.45], "EPSG:4326", "EPSG:3857"),
         zoom: 9.5,
         // minZoom: 10.5,
         maxZoom: 18,
@@ -393,6 +409,7 @@ export default {
         DrainLLayer,
         BasemapLayer,
         CircleLayer,
+        arunachalPradeshLayer,
       ];
 
       // Add click event listener to the map
