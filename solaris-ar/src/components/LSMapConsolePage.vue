@@ -21,23 +21,23 @@
       <ion-header>
         <ion-toolbar>
           <ion-buttons slot="start">
-            <ion-menu-button></ion-menu-button>
+            <ion-menu-button class="ion-margin-right"></ion-menu-button>
+            <ion-buttons>
+            <ion-back-button class="ion-margin-left" text="" default-href="/main" />
+          </ion-buttons>  
           </ion-buttons>
           <ion-title>
             <ion-img src="../src/assets/img/SOLARISLogo.png"> </ion-img>
-          </ion-title>
-          <ion-buttons slot="start">
-            <ion-back-button default-href="/main" />
-          </ion-buttons>
+          </ion-title>   
+          <ion-button slot="end" color="primary" class="iom-padding-right">            
+              <ion-icon name="search-outline"></ion-icon>
+            </ion-button>
+            <!-- <ion-searchbar v-model="searchOpen"></ion-searchbar> -->
         </ion-toolbar>
       </ion-header>
+     
       <ion-content class="ion-padding">
         <div id="map" class="map"></div>
-        <FeatureInfo
-          :featureInfo="featureInfo"
-          :isOpen="isFeatureInfoOpen"
-          @update:isOpen="isFeatureInfoOpen = $event"
-        />
         <!-- <div v-if="featureInfo" class="feature-info">
           <h3>Feature adfssdfsdaf Info</h3>
           <p v-for="(value, key) in featureInfo" :key="key">
@@ -52,6 +52,12 @@
           </ion-pre>
         </div> -->
       </ion-content>
+      <ion-footer>
+        <FeatureInfo
+          :featureInfo="featureInfo"
+          @update:isOpen="isFeatureInfoOpen = $event"
+        />
+      </ion-footer>
     </ion-page>
   </div>
 </template>
@@ -66,6 +72,18 @@ import {
   IonTitle,
   IonToolbar,
   IonBackButton,
+  IonButton,
+  IonIcon,
+  IonSearchbar,
+  IonFooter,
+  IonSegment,
+  IonCard,
+  IonSegmentButton,
+  IonCardContent,
+  IonImg,
+  IonCol,
+  IonRow,
+
 } from "@ionic/vue";
 import "ol/ol.css";
 import { Map, View } from "ol";
@@ -86,8 +104,12 @@ export default {
       layers: [],
       map: null,
       overlay: null,
-      featureInfo: null,
+      featureInfo: [],
       legendUrl: null,
+      popup_labels:{
+        lat:"Latitude",
+        long:"Longitude"
+      },
     };
   },
   components: {
@@ -102,7 +124,17 @@ export default {
     CustomLayerSwitcher,
     SideMenuContent,
     FeatureInfo,
-    isFeatureInfoOpen: false, // To control the modal visibility
+    IonButton,
+    IonIcon,
+    IonSearchbar,
+    IonFooter,
+    IonSegment,
+    IonCard,
+    IonSegmentButton,
+    IonCardContent,
+    IonImg,
+    IonCol,
+    IonRow,
   },
   mounted() {
     this.initializeMap();
@@ -498,7 +530,26 @@ export default {
               .then((data) => {
                 if (data.features && data.features.length > 0) {
                   const feature = data.features[0];
-                  this.featureInfo = feature.properties;
+                  // if(feature.properties==='lat'){
+                  //   this.featureInfo = feature.properties;
+                  // }
+                  console.log("data",data)
+                  if (data.features.length>0) {
+                    console.log("/////////////////////")
+                    const latLongData = []
+          for (let index = 0; index < data.features.length; index++) {
+            for (var k in data.features[index].properties) {
+				Object.entries(this.popup_labels).forEach(([key, value]) => {
+          console.log("/////////////////////+++++++++++++++++++++++++",key,k)
+                  if (key == k) {    
+                    this.featureInfo =latLongData.push(data.features[index].properties[k]);                
+                    console.log("********************************",latLongData);
+                  }
+                });
+            }
+          }
+          this.featureInfo=latLongData
+        }
                   this.isFeatureInfoOpen = true;
                 } else {
                   this.featureInfo = null;
@@ -537,5 +588,8 @@ ion-menu::part(container) {
 .map {
   height: 100%;
   width: 100%;
+}
+ion-img{
+  height:2rem;
 }
 </style>
