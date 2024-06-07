@@ -35,6 +35,16 @@ import '@ionic/vue/css/palettes/dark.system.css';
 import './theme/variables.css';
 import './theme/style.css'
 
+import { addIcons } from 'ionicons';
+import { homeOutline, searchOutline, closeCircleOutline } from 'ionicons/icons';
+
+// Add the specific icons you want to use
+addIcons({
+  'home-outline': homeOutline,
+  'search-outline': searchOutline,
+  'close-circle-outline': closeCircleOutline
+});
+
 const app = createApp(App)
   .use(IonicVue)
   .use(router);

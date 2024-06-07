@@ -1,11 +1,7 @@
 <template>
   <ion-page>
     <ion-toolbar>
-      <ion-img
-        class="imgsize"
-        src="../src/assets/img/SOLARISLogo.png"
-        alt="Solaris"
-      ></ion-img
+      <ion-img class="imgsize" :src="imageSrc" alt="Solaris"></ion-img
     ></ion-toolbar>
     <ion-content>
       <ion-card>
@@ -30,7 +26,7 @@
             <div>
               <object
                 type="image/svg+xml"
-                data="../src/assets/img/out3.svg"
+                :data="svgData"
                 class="svg-content"
               ></object>
             </div>
@@ -84,7 +80,7 @@
               ></router-link> -->
               <!-- <ion-img src="../src/assets/img/NSGRAD.jpg" /> -->
               <button @click="$router.push('/namsaimapconsole')">
-                <ion-img src="../src/assets/img/NSGRAD.jpg" />
+                <ion-img :src="nsImg" />
               </button>
               <div class="overlay-text">Namsai</div>
             </div>
@@ -95,7 +91,7 @@
                 ><button><ion-img src="../src/assets/img/LSGRAD.jpg" /></button
               ></router-link> -->
               <button @click="$router.push('/lsmapconsole')">
-                <ion-img src="../src/assets/img/LSGRAD.jpg" />
+                <ion-img :src="lsImg" />
               </button>
               <div class="overlay-text">Lower Subansari</div>
             </div>
@@ -106,7 +102,7 @@
                 ><button><ion-img src="../src/assets/img/TWGRAD.jpg" /></button
               ></router-link> -->
               <button @click="$router.push('/twmapconsole')">
-                <ion-img src="../src/assets/img/TWGRAD.jpg" />
+                <ion-img :src="twImg" />
               </button>
               <div class="overlay-text">Tawang</div>
             </div>
@@ -117,10 +113,7 @@
         <ion-row>
           <ion-col size="3" class="ion-no-padding ion-no-margin">
             <ion-card>
-              <ion-img
-                class="console-image"
-                src="../src/assets/img/Map_Console_Logo.png"
-              ></ion-img>
+              <ion-img class="console-image" :src="MapConsole"></ion-img>
               <hr />
               <div class="ion-text-center">
                 <ion-text>Namsai</ion-text>
@@ -185,7 +178,16 @@ import {
   IonRow,
   IonCol,
   IonCard,
+  IonText,
+  IonGrid,
 } from "@ionic/vue";
+import Logo from "@/assets/img/SOLARISLogo.png";
+import SvgData from "@/assets/img/out3.svg";
+import NsImg from "@/assets/img/NSGRAD.jpg";
+import LsImg from "@/assets/img/LSGRAD.jpg";
+import TwImg from "@/assets/img/TWGRAD.jpg";
+import mapConsole from "@/assets/img/Map_Console_Logo.png";
+
 export default {
   components: {
     IonContent,
@@ -197,6 +199,18 @@ export default {
     IonRow,
     IonCol,
     IonCard,
+    IonText,
+    IonGrid,
+  },
+  data() {
+    return {
+      imageSrc: Logo, // Adjust the path according to your project structure
+      svgData: SvgData,
+      nsImg: NsImg,
+      lsImg: LsImg,
+      twImg: TwImg,
+      MapConsole: mapConsole,
+    };
   },
 };
 </script>
