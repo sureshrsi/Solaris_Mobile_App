@@ -118,10 +118,10 @@
               </ion-card>
               <ion-card class="cardSize">
                 <ion-text><h4>Legend</h4></ion-text>
-                <ion-card-contents>
+                <ion-card-content>
                   <div v-if="legendUrl" class="legend">
                     <img :src="legendUrl" alt="Legend Image" /></div
-                ></ion-card-contents>
+                ></ion-card-content>
               </ion-card>
             </ion-col>
           </ion-row>
@@ -146,6 +146,12 @@ import {
   IonToggle,
   IonSegment,
   IonSegmentButton,
+  IonTitle,
+  IonImg,
+  IonText,
+  IonRow,
+  IonCol,
+  IonCardContent,
 } from "@ionic/vue";
 import { useRoute } from "vue-router";
 export default {
@@ -173,6 +179,12 @@ export default {
     IonToggle,
     IonSegment,
     IonSegmentButton,
+    IonTitle,
+    IonImg,
+    IonText,
+    IonRow,
+    IonCol,
+    IonCardContent,
   },
   computed: {
     pageTitle() {

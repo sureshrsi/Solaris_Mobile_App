@@ -24,18 +24,18 @@
             <ion-menu-button></ion-menu-button>
           </ion-buttons>
           <ion-title>
-            <ion-img src="../src/assets/img/SOLARISLogo.png"> </ion-img>
+            <ion-img :src="imageSrc"> </ion-img>
           </ion-title>
           <ion-buttons slot="start">
             <ion-back-button default-href="/main" />
           </ion-buttons>
+          <ion-icon slot="end" name="search-outline"></ion-icon>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
         <div id="map" class="map"></div>
         <FeatureInfo
           :featureInfo="featureInfo"
-          :isOpen="isFeatureInfoOpen"
           @update:isOpen="isFeatureInfoOpen = $event"
         />
         <!-- <div v-if="featureInfo" class="feature-info">
@@ -58,14 +58,15 @@
 
 <script>
 import {
+  IonPage,
+  IonHeader,
+  IonToolbar,
   IonButtons,
   IonContent,
-  IonHeader,
   IonMenuButton,
-  IonPage,
   IonTitle,
-  IonToolbar,
   IonBackButton,
+  IonImg,
 } from "@ionic/vue";
 import "ol/ol.css";
 import { Map, View } from "ol";
@@ -80,10 +81,12 @@ import "ol-layerswitcher/dist/ol-layerswitcher.css";
 import CustomLayerSwitcher from "./CustomLayerSwitcher.vue";
 import SideMenuContent from "./SideMenuContent.vue";
 import FeatureInfo from "./FeatureInfo.vue";
+import Logo from "@/assets/img/SOLARISLogo.png";
 export default {
   data() {
     return {
       layers: [],
+      imageSrc: Logo,
       map: null,
       overlay: null,
       featureInfo: null,
@@ -102,7 +105,7 @@ export default {
     CustomLayerSwitcher,
     SideMenuContent,
     FeatureInfo,
-    isFeatureInfoOpen: false, // To control the modal visibility
+    IonImg,
   },
   mounted() {
     this.initializeMap();
@@ -475,7 +478,7 @@ export default {
             });
 
           if (url) {
-            console.log("top most url", url);
+            // console.log("top most url", url);
             fetch(url)
               .then((response) => response.json())
               .then((data) => {

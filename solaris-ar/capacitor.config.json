@@ -1,0 +1,21 @@
+{
+    "appId": "com.example.myapp",
+    "appName": "My App",
+    "bundledWebRuntime": false,
+    "npmClient": "npm",
+    "webDir": "www",
+    "plugins": {
+      // Add plugin configurations here
+    },
+    "android": {
+      // Android-specific configurations
+      "allowMixedContent": true,
+      "cleartext": true,
+      "whitelist": [
+        "https://solaris-ar.com:8085/geoserver"
+      ]
+    },
+    "ios": {
+      // iOS-specific configurations
+    }
+  }

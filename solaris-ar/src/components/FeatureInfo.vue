@@ -10,7 +10,7 @@
     </ion-header>
     <ion-content>
       <div v-if="featureInfo">
-        <h3>Fea Info</h3>
+        <ion-title>Fea Info</ion-title>
         <p v-for="(value, key) in featureInfo" :key="key">
           <strong>{{ key }}:</strong> {{ value }}
         </p>
@@ -20,7 +20,14 @@
 </template>
 
 <script>
-import { IonCard, IonContent, IonRow, IonCol } from "@ionic/vue";
+import {
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonButtons,
+  IonButton,
+  IonContent,
+} from "@ionic/vue";
 export default {
   props: {
     featureInfo: Object,
@@ -30,10 +37,12 @@ export default {
     return {};
   },
   components: {
-    IonCard,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonButtons,
+    IonButton,
     IonContent,
-    IonRow,
-    IonCol,
   },
   methods: {
     closeFeatureInfo() {
