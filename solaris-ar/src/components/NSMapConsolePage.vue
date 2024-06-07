@@ -23,13 +23,12 @@
           <ion-buttons slot="start">
             <ion-menu-button></ion-menu-button>
           </ion-buttons>
+               <ion-buttons slot="start">
+            <ion-back-button default-href="/main" />
+          </ion-buttons>
           <ion-title>
             <ion-img :src="imageSrc"> </ion-img>
           </ion-title>
-          <ion-buttons slot="start">
-            <ion-back-button default-href="/main" />
-          </ion-buttons>
-          <ion-icon slot="end" name="search-outline"></ion-icon>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
