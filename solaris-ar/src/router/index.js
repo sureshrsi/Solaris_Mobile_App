@@ -5,7 +5,7 @@ import NSMapConsoleView from '../views/NSMapConsoleView.vue'
 import LSMapConsoleView from '../views/LSMapConsoleView.vue'
 import TWMapConsoleView from '../views/TWMapConsoleView.vue'
 import GenerateReport from '../components/generateReport.vue';
-import Exit from '../views/Exit.vue'; // Create an empty Exit.vue component
+// import Exit from '../views/Exit.vue'; // Create an empty Exit.vue component
 
 const routes = [
   {
@@ -42,11 +42,11 @@ const routes = [
   name:'generateReport',
   component:GenerateReport
 },
-{
-  path: '/exit',
-  name: 'Exit',
-  component: Exit
-}
+// {
+//   path: '/exit',
+//   name: 'Exit',
+//   component: Exit
+// }
 ]
 
 const router = createRouter({
